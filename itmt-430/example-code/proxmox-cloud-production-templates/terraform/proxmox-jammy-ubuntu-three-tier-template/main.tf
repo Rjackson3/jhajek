@@ -12,7 +12,7 @@ resource "random_shuffle" "datadisk" {
 }
 # data.vault_generic_secret.target_node.data
 resource "random_shuffle" "nodename" {
-  input        = [data.vault_generic_secret.target_node.data["SYSTEM42"], data.vault_generic_secret.target_node.data["SYSTEM41"]]
+  input        = [data.vault_generic_secret.target_node.data["NODENAME3"], data.vault_generic_secret.target_node.data["NODENAME2"], data.vault_generic_secret.target_node.data["NODENAME1"]]
   result_count = 1
 }
 
@@ -27,11 +27,11 @@ data "vault_generic_secret" "pm_api_url" {
 }
 
 data "vault_generic_secret" "pm_api_token_id" {
-  path = "secret/SECRETKEY"
+  path = "secret/ACCESSKEY"
 }
 
 data "vault_generic_secret" "pm_api_token_secret" {
-  path = "secret/ACCESSKEY"
+  path = "secret/SECRETKEY"
 }
 
 data "vault_generic_secret" "target_node" {
@@ -47,7 +47,7 @@ data "vault_generic_secret" "target_node" {
 resource "proxmox_vm_qemu" "load-balancer" {
   count = var.lb-numberofvms
   name  = "${var.lb-yourinitials}-vm${count.index}.service.consul"
-  desc  = var.lb-desc
+  description  = var.lb-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.lb-template_to_clone
@@ -115,8 +115,8 @@ resource "proxmox_vm_qemu" "load-balancer" {
       "sudo sed -i 's/replace-name/${var.lb-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
       "sudo sed -i 's/ubuntu-server/${var.lb-yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/FQDN/${var.lb-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
-      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
-      "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"mies-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.system22h090}\",\"${var.system22h089}\",\"${var.system22h088}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
       "sudo rm /opt/consul/node-id",
@@ -154,7 +154,7 @@ output "proxmox_lb_ip_address_default" {
 resource "proxmox_vm_qemu" "frontend-webserver" {
   count = var.frontend-numberofvms
   name  = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
-  desc  = var.frontend-desc
+  description  = var.frontend-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.frontend-template_to_clone
@@ -213,8 +213,8 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
       "sudo sed -i 's/replace-name/${var.frontend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
       "sudo sed -i 's/ubuntu-server/${var.frontend-yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/FQDN/${var.frontend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
-      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
-      "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"mies-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.system22h090}\",\"${var.system22h089}\",\"${var.system22h088}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
       "sudo rm /opt/consul/node-id",
@@ -251,7 +251,7 @@ output "proxmox_frontend_ip_address_default" {
 resource "proxmox_vm_qemu" "backend-database" {
   count = var.backend-numberofvms
   name  = "${var.backend-yourinitials}-vm${count.index}.service.consul"
-  desc  = var.backend-desc
+  description  = var.backend-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.backend-template_to_clone
@@ -310,8 +310,8 @@ resource "proxmox_vm_qemu" "backend-database" {
       "sudo sed -i 's/replace-name/${var.backend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
       "sudo sed -i 's/ubuntu-server/${var.backend-yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/FQDN/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
-      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
-      "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"mies-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.system22h090}\",\"${var.system22h089}\",\"${var.system22h088}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo sed -i 's/HAWKID/${var.consul-service-tag-contact-email}/' /etc/consul.d/node-exporter-consul-service.json",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
