@@ -4,23 +4,21 @@
 
 ### My Role: Ryan Jackson,UI/UX
 
-**In Sprint‑04, I took on the role of UI/UX, and I was primarily responsible for getting people to test our website as well as assisting the team with debugging/testing.**
+**In Sprint‑04, I took on the role of UI/UX as well as replacement dev as one of our teammates Adam dropped the course, and I was primarily responsible for getting people to test our website as well as assisting the team with debugging/testing.**
 
 ### Assigned Tasks and Artifacts
 
 **1. `Survey`**
 
 Commit:6ba0704 Create Test_Results.md for documenting test out... - Rjackson3
-PM Card:UI/UX - Add 25 simulated users and posts/operations using faker (3pts)
+PM Card:UI/UX - Ask 10 users to test (2pts)
 
 **2. Testing**
 
-Commit: 15090b4 focused the controller ip to 10.110.%.% - Rjackson3
-PM Card: Dev - Troubleshoot production deployment issues (5pts)
+PM Card: UI/UX - Test prototype behavior (3pts)
 
 **3. Debugging
-Commit:a5f62f9 Add logging sequence diagram - Rjackson3
-PM Card: Dev - Mermaid sequence diagram for logging in (2pts)
+PM Card: UI/UX - Ensure design-to-code accuracy (3pts)
 
 
 ### Self-Critique and Areas of Improvement
