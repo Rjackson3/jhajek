@@ -10,8 +10,8 @@
 
 **1. `Survey`**
 
-Commit: 080f9e3 Updated Generate_Users to fit the application - Rjackson3 
-PM Card:Dev - Add 25 simulated users and posts/operations using faker (3pts)
+Commit:6ba0704 Create Test_Results.md for documenting test out... - Rjackson3
+PM Card:UI/UX - Add 25 simulated users and posts/operations using faker (3pts)
 
 **2. Testing**
 
@@ -39,85 +39,85 @@ PM Card: Dev - Mermaid sequence diagram for logging in (2pts)
 ## Group Critique
 ### Emily Xu — [Dev]
 Assigned Tasks:
-
-Build and manage Packer VM templates
-Deploy full stack using Terraform
-Implement Vault secrets (KV, AppRole, DB, MinIO)
-Remove hard‑coded secrets
-Configure DB replication
-Configure MinIO object storage
-Validate firewall and API security
-Demonstrate load balancer failover
+Integrate Vault secrets into application configuration
+Remove all hard‑coded credentials from code
+Update application logic to support read/write DB separation
+Refine and deploy application features
+Assist with production deployment troubleshooting
+Support pre‑seeding of posts and users via .sql scripts
 
 What They Completed:
-✅ Infrastructure fully deployed on Proxmox using Terraform
-✅ VM templates successfully built with Packer
-✅ Vault used for all secrets (no plaintext credentials)
-✅ DB replication implemented and verified
-✅ MinIO deployed and accessible via SDK
-✅ Load balancer demoed live by terminating two instances
-✅ Deployment process reproducible from scratch
+✅ Application successfully retrieved secrets from HashiCorp Vault
+✅ All hard‑coded secrets were removed from the repository
+✅ Database calls were split correctly between master and replica
+✅ Feature updates were deployed and verified in production
+✅ Assisted Ops during multiple production builds
+✅ Helped validate seeded data appeared correctly in the UI
 
 What Blocked Them:
-None
+Initial Vault integration required coordination with Ops to align policies
 
 Areas of Strength:
 
-Excellent communication
-Proactive about checking on blockers
+Effective troubleshooting during production deployment
+Commits were well‑documented and traceable to PM cards
 
 Areas for Improvement:
-
-
-
+Earlier alignment on Vault naming conventions
 
 ### Bezeleel Manor — [IP Ops]
 Assigned Tasks:
 
-Adjust application code for DB read/write separation
-Support implementation of read replicas
-Integrate MinIO object storage for media
+Deploy and configure HashiCorp Vault
+Store and demonstrate KV secrets
+Configure DB primary/replica architecture
+Deploy MinIO S3‑compatible object storage
+Integrate MinIO with application
+Deploy full 3‑tier system using Packer and Terraform
+Demonstrate load balancer failover
+Document firewall rules and API security
 
 What They Completed:
-✅ Updated data access logic so writes go to the primary DB and reads go to replicas
-✅ Supported MinIO SDK integration and verified media uploads
-✅ Confirmed no hard‑coded secrets remained in the codebase
+
 
 What Blocked Them:
-None
+Confusion of build/rebuild instructions
+Personality conflicts
 
 Areas of Strength:
-
-Proactive about checking on blockers
-Completed tasks effeciently
+Strong collaboration with developers
 
 Areas for Improvement:
-
-Could be more communicative throughout the sprint
+Simplify deployment instructions for non‑Ops roles
+Add more commentary to Terraform and Vault policy files
+Ensure you're mentally prepared to take on new tasks before sprint
 
 ### Mohammad (Hamza) Khiyani — [PM]
 Assigned Tasks:
 
-Test the production deployment (not localhost)
-Perform real user workflows (login, post, reply, logout)
-Log bugs using GitHub Issues
-Track fixes and unresolved issues
-Provide usability feedback under simulated load
+Rotate all team roles at sprint start
+Capture Sprint‑04 start state and track changes from Sprint‑03
+Break required work into 25 story points with owners
+Ensure all professor‑mandated tasks were included
+Facilitate swarm sessions for blocking items
+Coordinate live demo requirements (LB, login, usage, UX study)
+Prepare and deliver the Sprint‑04 presentation
+Compile deployment artifacts and submit sprint‑04/report.md
 
 What They Completed:
-✅ Tested full user workflows in production
-✅ Logged multiple GitHub Issues with reproduction steps
-✅ Verified UI alignment with Sprint‑01 design
-✅ Retested issues once fixes were deployed
-✅ Identified usability concerns under simulated activity
+✅ Roles were rotated immediately after Sprint‑03
+✅ PM board was kept current with points, owners, and statuses
+✅ Required Vault, DB replica, MinIO, and usage tasks were accounted for
+✅ Progress and blockers were actively managed throughout the sprint
+✅ Presentation covered infrastructure, application usage, and UX conclusions
+✅ Final report consolidated artifacts from all roles
 
 What Blocked Them:
 His tasks are partially reliant on the developers so his part comes near the end of the sprint
 
 Areas of Strength:
-
-Excellent communication with team and professor
-Proactive about checking on blockers
-Actively assisted in transition of roles and was still a major debugging force
+Strong organization and leadership in a short sprint timeline
+Clear communication and follow‑ups outside of class
+Ensured all required Sprint‑04 objectives were demonstrated
 
 Areas for Improvement:
