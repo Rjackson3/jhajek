@@ -9,114 +9,109 @@ bug tracking, security review, UX validation, and live demonstration.**
 
 ### Assigned Tasks and Artifacts
 
-**1. ``**
+**1. `Task dsitrobution & ranking`**
 
-Commit:6ba0704 Create Test_Results.md for documenting test out... - Rjackson3
-PM Card:UI/UX - Ask 10 users to test (2pts)
+Commit:563c5eb Add Sprint-05 role rotation and task estimation... - Rjackson3
+PM Card:PM - Document start state and point estiation (2pts)
 
-**2. Testing**
+**2. *Tutorial video*
 
-PM Card: UI/UX - Test prototype behavior (3pts)
+PM Card: PM - Maybe tour or video (1pts)
 
-**3. Debugging
-PM Card: UI/UX - Ensure design-to-code accuracy (3pts)
+**3. PM presentation prep
+PM Card: PM - PM presentation prep (2pts)
 
 
 ### Self-Critique and Areas of Improvement
 
-**What went wall:** 
+**What went well:** 
 
-- I was able to deliver functional additions to the application and I fixed several deployment mismatches
-- I was very open with what I don't know so when I did need to communicate during debugging I was very communicative and open
+- Strong organization and leadership under a short sprint timeline
+- Ensured all required Sprint‑05 objectives were demonstrated
+- 
 
 **Where I can improve:**
 
-- I could've been more proactive with sending out the survey
--  
+- Further break down infrastructure tasks earlier in the sprint
+- Clearer communication and follow‑up outside of class
 -
 
 ## Group Critique
 ### Emily Xu — [Dev]
 Assigned Tasks:
-Integrate Vault secrets into application configuration
-Remove all hard‑coded credentials from code
-Update application logic to support read/write DB separation
-Refine and deploy application features
-Assist with production deployment troubleshooting
-Support pre‑seeding of posts and users via .sql scripts
+Final application feature refinements
+Final CSS updates matching original UI/UX design
+Assist with production deployment
 
 What They Completed:
-✅ Application successfully retrieved secrets from HashiCorp Vault
-✅ All hard‑coded secrets were removed from the repository
-✅ Database calls were split correctly between master and replica
-✅ Feature updates were deployed and verified in production
-✅ Assisted Ops during multiple production builds
-✅ Helped validate seeded data appeared correctly in the UI
+✅ Final CSS changes were applied and matched the original design plan
+✅ Application features were stable and functioned correctly in production
+✅ Assisted with multiple production builds and redeployments
 
 What Blocked Them:
 Initial Vault integration required coordination with Ops to align policies
 
 Areas of Strength:
-
 Effective troubleshooting during production deployment
-Commits were well‑documented and traceable to PM cards
 
 Areas for Improvement:
-Earlier alignment on Vault naming conventions
+Some design polish could have been applied earlier
+Additional comments in code would help long‑term maintainability
 
-### Bezeleel Manor — [IP Ops]
+### Bezeleel Manor — [UI/UX]
 Assigned Tasks:
-
-Deploy and configure HashiCorp Vault
-Store and demonstrate KV secrets
-Configure DB primary/replica architecture
-Deploy MinIO S3‑compatible object storage
-Integrate MinIO with application
-Deploy full 3‑tier system using Packer and Terraform
-Demonstrate load balancer failover
-Document firewall rules and API security
+Test full site functionality in production
+Log bugs and UX issues using GitHub Issues
+Summarize usability findings for presentation
+Perform internal vulnerability analysis
+Summarize usability findings for presentation
+Code tutorial video into app
 
 What They Completed:
-
+✅ Participated in site vulnerability analysis and documented findings
+✅ Logged issues in GitHub with clear reproduction steps
+✅ Penetration testing was completed and findings documented
+✅ Provided meaningful usability conclusions presented in Sprint‑05 demo
+✅ Coded tutorial video into application
 
 What Blocked Them:
-Confusion of build/rebuild instructions
-Personality conflicts
 
 Areas of Strength:
 Strong collaboration with developers
 
 Areas for Improvement:
-Simplify deployment instructions for non‑Ops roles
-Add more commentary to Terraform and Vault policy files
-Ensure you're mentally prepared to take on new tasks before sprint
+Earlier testing in production could reduce late fixes
 
-### Mohammad (Hamza) Khiyani — [PM]
+### Mohammad (Hamza) Khiyani — [Dev/IT Ops]
 Assigned Tasks:
 
-Rotate all team roles at sprint start
-Capture Sprint‑04 start state and track changes from Sprint‑03
-Break required work into 25 story points with owners
-Ensure all professor‑mandated tasks were included
-Facilitate swarm sessions for blocking items
-Coordinate live demo requirements (LB, login, usage, UX study)
-Prepare and deliver the Sprint‑04 presentation
-Compile deployment artifacts and submit sprint‑04/report.md
+Production redeploy via Packer/Terraform
+Deploy infrastructure using Terraform
+Maintain clean build scripts and documentation
+Document security findings and mitigations
+
+Support application deployment via automation scripts
+Assist UI/UX with interactive site testing
+Support GitHub Issue resolution
+Participate in production usage demonstration
 
 What They Completed:
-✅ Roles were rotated immediately after Sprint‑03
-✅ PM board was kept current with points, owners, and statuses
-✅ Required Vault, DB replica, MinIO, and usage tasks were accounted for
-✅ Progress and blockers were actively managed throughout the sprint
-✅ Presentation covered infrastructure, application usage, and UX conclusions
-✅ Final report consolidated artifacts from all roles
+✅ Infrastructure was successfully deployed in production
+✅ Automated builds were repeatable and documented
+✅ Security configurations were explained and validated
+✅ Supported developers during production troubleshooting
+
+✅ Assisted with automated deployment and production troubleshooting
+✅ Collaborated with UI/UX in validating usability flows
+✅ Addressed GitHub issues tied to application behavior
+✅ Participated in live site usage demonstrations during testing
 
 What Blocked Them:
-His tasks are partially reliant on the developers so his part comes near the end of the sprint
 
 Areas of Strength:
-Strong organization and leadership in a short sprint timeline
-Clear communication and follow‑ups outside of class
-Ensured all required Sprint‑04 objectives were demonstrated
 
 Areas for Improvement:
+More detailed commit messages for UI‑related changes
+
+Deployment documentation could be simplified further
+Earlier coordination with developers on configuration changes
